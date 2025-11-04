@@ -1,0 +1,49 @@
+{ pkgs, self, ... }:
+{
+  # touch ID for sudo
+  security.pam.services.sudo_local.touchIdAuth = true;
+
+  system = {
+    # Set Git commit hash for darwin-version.
+    configurationRevision = self.rev or self.dirtyRev or null;
+
+    # Used for backwards compatibility, please read the changelog before changing.
+    # $ darwin-rebuild changelog
+    stateVersion = 6;
+
+    startup.chime = false;
+
+    defaults = {
+      dock.show-recents = false; # disable recent apps
+
+      finder = {
+        AppleShowAllExtensions = true; # file extensions
+        ShowPathbar = true; # breadcrumb nav at bottom
+      };
+    };
+
+    # keyboard = {
+    #   enableKeyMapping = true;  # enable key mapping so that we can use `option` as `control`
+    #   remapCapsLockToEscape  = true;   # remap caps lock to escape
+    # };
+  };
+
+  # Create /etc/zshrc that loads the nix-darwin environment.
+  # this is required if you want to use darwin's default shell - zsh
+  programs.zsh.enable = true;
+  environment.shells = [ pkgs.zsh ];
+
+  # Fonts
+  fonts = {
+    packages = with pkgs; [
+      # icon fonts
+      # material-design-icons
+      # font-awesome
+
+      # nerdfonts
+      # https://github.com/NixOS/nixpkgs/blob/nixos-unstable-small/pkgs/data/fonts/nerd-fonts/manifests/fonts.json
+      nerd-fonts.symbols-only # symbols icon only
+      nerd-fonts.fira-code
+    ];
+  };
+}
