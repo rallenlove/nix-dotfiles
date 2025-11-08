@@ -18,6 +18,7 @@ in
     "discord"
     "transmission"
   ];
+
   system.keyboard = {
     enableKeyMapping = true; # enable key mapping so that we can use `option` as `control`
     remapCapsLockToEscape = true; # remap caps lock to escape

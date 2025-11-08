@@ -4,8 +4,6 @@
     delta
     fd
     fzf
-    helix
-    lazygit
     nil
     nixd
     pure-prompt

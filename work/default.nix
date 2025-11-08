@@ -9,9 +9,17 @@ in
   };
 
   # Home Manager
-  home-manager = {
-    extraSpecialArgs = { inherit primaryUser; };
-    users.${primaryUser} = import ../common/home;
+  # home-manager = {
+  #   extraSpecialArgs = { inherit primaryUser; };
+  #   users.${primaryUser} = import ../common/home;
+  # };
+
+  home-manager.extraSpecialArgs = { inherit primaryUser; };
+  home-manager.users.${primaryUser} = {
+    imports = [
+      ../common/home
+      ./home
+    ];
   };
 
   homebrew = {
@@ -25,7 +33,7 @@ in
       "python@3.11"
       # The rest
       "coreutils"
-      "fastly"
+      "fastly" # requires fastly tap
       "imagemagick"
       "jq"
       "openssl"
@@ -36,7 +44,8 @@ in
     ];
 
     casks = [
-      "docker"
+      "cursor"
+      "docker-desktop"
       "google-chrome"
       "slack"
       "visual-studio-code"

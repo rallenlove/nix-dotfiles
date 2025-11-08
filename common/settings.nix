@@ -30,8 +30,8 @@
 
   # Create /etc/zshrc that loads the nix-darwin environment.
   # this is required if you want to use darwin's default shell - zsh
-  programs.zsh.enable = true;
-  environment.shells = [ pkgs.zsh ];
+  # programs.zsh.enable = true;
+  # environment.shells = [ pkgs.zsh ]; # Don't understand this--messes up system zsh
 
   # Fonts
   fonts = {
