@@ -14,13 +14,20 @@
     startup.chime = false;
 
     defaults = {
-      dock.show-recents = false; # disable recent apps
+      dock = {
+        expose-group-apps = true;
+        mineffect = "scale";
+        mru-spaces = true; # automatically rearrange spaces based on most recent use
+        show-recents = false; # disable recent apps
+      };
 
       finder = {
         AppleShowAllExtensions = true; # file extensions
         ShowPathbar = true; # breadcrumb nav at bottom
       };
     };
+
+    environment.variables.HOMEBREW_NO_ENV_HINTS = 1;
 
     # keyboard = {
     #   enableKeyMapping = true;  # enable key mapping so that we can use `option` as `control`

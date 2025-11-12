@@ -7,14 +7,15 @@
 
     onActivation = {
       autoUpdate = true;
-      cleanup = "zap";
       upgrade = true;
+      cleanup = "zap";
     };
 
     casks = [
       "colemak-dh"
       "firefox"
       "ghostty"
+      "ungoogled-chromium"
       "zed"
       "zen"
     ];
