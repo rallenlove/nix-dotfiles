@@ -27,13 +27,13 @@
       };
     };
 
-    environment.variables.HOMEBREW_NO_ENV_HINTS = 1;
-
     # keyboard = {
     #   enableKeyMapping = true;  # enable key mapping so that we can use `option` as `control`
     #   remapCapsLockToEscape  = true;   # remap caps lock to escape
     # };
   };
+
+  environment.variables.HOMEBREW_NO_ENV_HINTS = "1"; # Have this in 2 places--does either work?
 
   # Create /etc/zshrc that loads the nix-darwin environment.
   # this is required if you want to use darwin's default shell - zsh

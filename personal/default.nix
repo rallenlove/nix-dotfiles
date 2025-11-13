@@ -16,6 +16,7 @@ in
 
   homebrew.casks = [
     "discord"
+    "helium-browser"
     "transmission"
   ];
 
