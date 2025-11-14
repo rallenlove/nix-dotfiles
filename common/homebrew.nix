@@ -15,7 +15,6 @@
       "colemak-dh"
       "firefox"
       "ghostty"
-      "ungoogled-chromium"
       "zed"
       "zen"
     ];

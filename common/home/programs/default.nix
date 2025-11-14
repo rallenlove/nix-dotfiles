@@ -72,6 +72,7 @@
         #   }
         # ];
       };
+      gui.nerdFontsVersion = "3";
     };
   };
 }

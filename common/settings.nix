@@ -25,12 +25,21 @@
         AppleShowAllExtensions = true; # file extensions
         ShowPathbar = true; # breadcrumb nav at bottom
       };
+
+      NSGlobalDomain = {
+        NSAutomaticCapitalizationEnabled = false;
+        NSAutomaticInlinePredictionEnabled = false;
+        NSAutomaticPeriodSubstitutionEnabled = false;
+        # NSAutomaticQuoteSubstitutionEnabled = false;
+        NSAutomaticSpellingCorrectionEnabled = false;
+        NSWindowShouldDragOnGesture = true;
+      };
     };
 
-    # keyboard = {
-    #   enableKeyMapping = true;  # enable key mapping so that we can use `option` as `control`
-    #   remapCapsLockToEscape  = true;   # remap caps lock to escape
-    # };
+    keyboard = {
+      enableKeyMapping = true; # enable key mapping so that we can use `option` as `control`
+      remapCapsLockToEscape = true; # remap caps lock to escape
+    };
   };
 
   environment.variables.HOMEBREW_NO_ENV_HINTS = "1"; # Have this in 2 places--does either work?
