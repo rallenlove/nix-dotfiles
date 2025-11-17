@@ -21,12 +21,10 @@
         show-recents = false; # disable recent apps
       };
 
-      finder = {
-        AppleShowAllExtensions = true; # file extensions
-        ShowPathbar = true; # breadcrumb nav at bottom
-      };
+      finder.ShowPathbar = true; # breadcrumb nav at bottom
 
       NSGlobalDomain = {
+        AppleShowAllExtensions = true; # file extensions
         NSAutomaticCapitalizationEnabled = false;
         NSAutomaticInlinePredictionEnabled = false;
         NSAutomaticPeriodSubstitutionEnabled = false;

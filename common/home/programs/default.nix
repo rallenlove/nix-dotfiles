@@ -30,7 +30,13 @@
   programs.helix = {
     enable = true;
     defaultEditor = true;
-    settings.theme = "solarized_dark";
+    settings = {
+      theme = "solarized_dark";
+      editor = {
+        trim-trailing-whitespace = true;
+        whitespace.render.tab = "all";
+      };
+    };
   };
   programs.helix.languages.language = [
     {
