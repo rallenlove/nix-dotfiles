@@ -4,5 +4,5 @@
     enableZshIntegration = true;
   };
 
-  xdg.configFile."starship.toml".source = ./nerd-icons.toml;
+  xdg.configFile."starship.toml".source = ./pure.toml;
 }
