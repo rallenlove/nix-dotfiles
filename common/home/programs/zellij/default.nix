@@ -2,6 +2,7 @@
 {
   programs.zellij = {
     enable = true;
+    enableZshIntegration = true;
     settings = {
       theme = "solarized-dark";
       on_force_close = "quit";

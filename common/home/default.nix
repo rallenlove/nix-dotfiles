@@ -12,6 +12,8 @@
     # originally installed.
     stateVersion = "25.05";
 
+    shell.enableZshIntegration = true;
+
     # Create .hushlogin file to suppress login messages
     file.".hushlogin".text = "";
 

@@ -6,16 +6,16 @@
 
   programs.zsh = {
     enable = true;
-    initContent =
-      let
-        pure = lib.mkOrder 500 "prompt pure";
-      in
-      lib.mkMerge [ pure ];
+    defaultKeymap = "viins";
+    autosuggestion.enable = true;
+    enableCompletion = true;
+    shellAliases.dr = "sudo -H darwin-rebuild switch --flake .";
   };
 
   programs.ghostty = {
     enable = true;
     package = null;
+    enableZshIntegration = true;
   };
   programs.ghostty.settings = {
     theme = "iTerm2 Solarized Dark";
@@ -56,6 +56,11 @@
     }
   ];
 
+  programs.fzf = {
+    enable = true;
+    enableZshIntegration = true;
+  };
+
   programs.lazygit = {
     enable = true;
     settings = {
@@ -80,5 +85,15 @@
       };
       gui.nerdFontsVersion = "3";
     };
+  };
+
+  programs.starship = {
+    enable = true;
+    enableZshIntegration = true;
+  };
+
+  programs.yazi = {
+    enable = true;
+    enableZshIntegration = true;
   };
 }

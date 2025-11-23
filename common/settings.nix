@@ -30,7 +30,7 @@
         NSAutomaticPeriodSubstitutionEnabled = false;
         # NSAutomaticQuoteSubstitutionEnabled = false;
         NSAutomaticSpellingCorrectionEnabled = false;
-        NSWindowShouldDragOnGesture = true;
+        NSWindowShouldDragOnGesture = true; # ctrl + cmd to drag anywhere on window
       };
     };
 

@@ -3,12 +3,9 @@
   home.packages = with pkgs; [
     delta
     fd
-    fzf
-    nil
-    nixd
-    pure-prompt
+    nil # Nix language server
+    nixd # Nix language server
     ripgrep
     uv
-    yazi
   ];
 }
