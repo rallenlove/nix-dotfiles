@@ -8,7 +8,7 @@
     enable = true;
     initContent =
       let
-        pure = lib.mkOrder 10 "prompt pure";
+        pure = lib.mkOrder 500 "prompt pure";
       in
       lib.mkMerge [ pure ];
   };
