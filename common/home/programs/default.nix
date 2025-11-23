@@ -1,16 +1,30 @@
-{ lib, ... }:
+{ config, pkgs, ... }:
 {
   imports = [
+    ./starship
     ./zellij
   ];
 
   programs.zsh = {
     enable = true;
+    dotDir = "${config.xdg.configHome}/zsh";
     defaultKeymap = "viins";
     enableCompletion = true;
     autosuggestion.enable = true;
     syntaxHighlighting.enable = true;
     shellAliases.dr = "sudo -H darwin-rebuild switch --flake .";
+    plugins = [
+      {
+        name = "zsh-autoswitch-virtualenv";
+        file = "autoswitch_virtualenv.plugin.zsh";
+        src = pkgs.fetchFromGitHub {
+          owner = "MichaelAquilina";
+          repo = "zsh-autoswitch-virtualenv";
+          rev = "HEAD";
+          sha256 = "sha256-jzeJYxoO8kXRexfRpG71YKO0RpwYHlagvkRVCnZ7UkQ=";
+        };
+      }
+    ];
   };
 
   programs.ghostty = {
@@ -86,11 +100,6 @@
       };
       gui.nerdFontsVersion = "3";
     };
-  };
-
-  programs.starship = {
-    enable = true;
-    enableZshIntegration = true;
   };
 
   programs.yazi = {

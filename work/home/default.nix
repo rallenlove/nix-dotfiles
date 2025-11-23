@@ -11,7 +11,7 @@
     plugins = [
       {
         name = "dbt-completion";
-        file = "_dbt";
+        completions = [ "_dbt" ];
         src = pkgs.fetchFromGitHub {
           owner = "dbt-labs";
           repo = "dbt-completion.bash";
