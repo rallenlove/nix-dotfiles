@@ -7,8 +7,9 @@
   programs.zsh = {
     enable = true;
     defaultKeymap = "viins";
-    autosuggestion.enable = true;
     enableCompletion = true;
+    autosuggestion.enable = true;
+    syntaxHighlighting.enable = true;
     shellAliases.dr = "sudo -H darwin-rebuild switch --flake .";
   };
 
