@@ -16,8 +16,6 @@
 
     # Create .hushlogin file to suppress login messages
     file.".hushlogin".text = "";
-
-    sessionVariables = { };
   };
 
   # Let Home Manager install and manage itself.

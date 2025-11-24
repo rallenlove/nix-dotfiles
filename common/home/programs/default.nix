@@ -7,13 +7,31 @@
 
   programs.zsh = {
     enable = true;
-    dotDir = "${config.xdg.configHome}/zsh";
     defaultKeymap = "viins";
     enableCompletion = true;
     autosuggestion.enable = true;
     syntaxHighlighting.enable = true;
-    shellAliases.dr = "sudo -H darwin-rebuild switch --flake .";
+    sessionVariables = {
+      # PYTHON_AUTO_VRUN = true;
+      # PYTHON_VENV_NAME = ".venv";
+    };
+    shellAliases = {
+      d-r = "sudo -H darwin-rebuild switch --flake .";
+    };
     plugins = [
+      # {
+      #   name = "python";
+      #   file = "plugins/python/python.plugin.zsh";
+      #   src = pkgs.fetchFromGitHub {
+      #     owner = "ohmyzsh";
+      #     repo = "ohmyzsh";
+      #     rev = "HEAD";
+      #     sha256 = "sha256-gEoNrPt5GZ/fmGZ7QCqNHVsqIXEA0+3WRakyvEJ4cWg=";
+      #     sparseCheckout = [
+      #       "plugins/python"
+      #     ];
+      #   };
+      # }
       {
         name = "zsh-autoswitch-virtualenv";
         file = "autoswitch_virtualenv.plugin.zsh";
@@ -34,6 +52,7 @@
   };
   programs.ghostty.settings = {
     theme = "iTerm2 Solarized Dark";
+    macos-icon = "custom";
     macos-option-as-alt = true;
     maximize = 1;
     keybind = [
@@ -41,6 +60,7 @@
       "alt+arrow_right=unbind"
     ];
   };
+  xdg.configFile."ghostty/Ghostty.icns".source = ./icons/kitty-light.icns;
 
   programs.helix = {
     enable = true;

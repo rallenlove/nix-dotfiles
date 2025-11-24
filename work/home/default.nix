@@ -1,7 +1,7 @@
 { pkgs, ... }:
 {
   home.sessionVariables = {
-    DBT_PROJECT_DIR = "$HOME/khanflow-pipelines/dbt-khanflow";
+    DBT_PROJECT_DIR = "$HOME/repos/khanflow-pipelines/dbt-khanflow";
   };
 
   programs.zsh = {
@@ -23,6 +23,6 @@
   };
 
   programs.ghostty.settings = {
-    working-directory = "/Users/rosslovelace/khanflow-pipelines/dbt-khanflow";
+    working-directory = "/Users/rosslovelace/repos/khanflow-pipelines/dbt-khanflow";
   };
 }

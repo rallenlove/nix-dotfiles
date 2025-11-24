@@ -8,12 +8,6 @@ in
     home = "/Users/${primaryUser}";
   };
 
-  # Home Manager
-  # home-manager = {
-  #   extraSpecialArgs = { inherit primaryUser; };
-  #   users.${primaryUser} = import ../common/home;
-  # };
-
   home-manager.extraSpecialArgs = { inherit primaryUser; };
   home-manager.users.${primaryUser} = {
     imports = [

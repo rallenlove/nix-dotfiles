@@ -1,3 +1,4 @@
+{ config, ... }:
 let
   primaryUser = "ross";
 in
@@ -21,8 +22,5 @@ in
     "ungoogled-chromium"
   ];
 
-  # system.keyboard = {
-  #   enableKeyMapping = true; # enable key mapping so that we can use `option` as `control`
-  #   remapCapsLockToEscape = true; # remap caps lock to escape
-  # };
+  programs.zsh.dotDir = "${config.xdg.configHome}/zsh";
 }
