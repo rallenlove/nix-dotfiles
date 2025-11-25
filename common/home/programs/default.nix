@@ -18,10 +18,6 @@
     shellAliases = {
       d-r = "sudo -H darwin-rebuild switch --flake .";
     };
-    initExtra = ''
-      # Enable uv-managed Python versions in PATH
-      eval "$(uv python update-shell)"
-    '';
     plugins = [
       # {
       #   name = "python";

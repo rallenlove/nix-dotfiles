@@ -1,4 +1,3 @@
-# { pkgs, lib, primaryUser, home-manager, ... }: {
 { inputs, ... }:
 {
   imports = [

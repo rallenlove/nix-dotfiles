@@ -2,6 +2,13 @@ let
   primaryUser = "ross";
 in
 {
+  homebrew.casks = [
+    "discord"
+    "helium-browser"
+    "transmission"
+    "ungoogled-chromium"
+  ];
+
   # macOS
   system.primaryUser = primaryUser;
   users.users.${primaryUser} = {
@@ -14,15 +21,8 @@ in
     users.${primaryUser} = {
       imports = [
         ../common/home
-        ./home
+        # ./home
       ];
     };
   };
-
-  homebrew.casks = [
-    "discord"
-    "helium-browser"
-    "transmission"
-    "ungoogled-chromium"
-  ];
 }
