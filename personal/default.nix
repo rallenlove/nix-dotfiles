@@ -1,4 +1,3 @@
-{ config, ... }:
 let
   primaryUser = "ross";
 in
@@ -12,7 +11,12 @@ in
   # Home Manager
   home-manager = {
     extraSpecialArgs = { inherit primaryUser; };
-    users.${primaryUser} = import ../common/home;
+    users.${primaryUser} = {
+      imports = [
+        ../common/home
+        ./home
+      ];
+    };
   };
 
   homebrew.casks = [
@@ -21,6 +25,4 @@ in
     "transmission"
     "ungoogled-chromium"
   ];
-
-  programs.zsh.dotDir = "${config.xdg.configHome}/zsh";
 }
