@@ -20,6 +20,13 @@
       nixpkgs,
       home-manager,
     }:
+    let
+      themeName = "catppuccin";
+      theme = (import ./common/home/themes.nix).${themeName};
+      specialArgs = {
+        inherit inputs self theme;
+      };
+    in
     {
       darwinConfigurations = {
         "Rosss-MacBook-Air" = nix-darwin.lib.darwinSystem {
@@ -27,7 +34,7 @@
             ./common
             ./personal
           ];
-          specialArgs = { inherit inputs self; };
+          inherit specialArgs;
         };
 
         "ross-lovelace" = nix-darwin.lib.darwinSystem {
@@ -35,7 +42,7 @@
             ./common
             ./work
           ];
-          specialArgs = { inherit inputs self; };
+          inherit specialArgs;
         };
       };
     };

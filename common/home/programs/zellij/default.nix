@@ -1,10 +1,10 @@
-{ ... }:
+{ theme, ... }:
 {
   programs.zellij = {
     enable = true;
     # enableZshIntegration = true;
     settings = {
-      theme = "solarized-dark";
+      theme = "${theme.zellij}";
       default_layout = "0";
       on_force_close = "quit";
     };

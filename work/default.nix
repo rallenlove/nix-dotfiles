@@ -1,3 +1,4 @@
+{ theme, ... }:
 let
   primaryUser = "rosslovelace";
 in
@@ -8,7 +9,7 @@ in
     home = "/Users/${primaryUser}";
   };
 
-  home-manager.extraSpecialArgs = { inherit primaryUser; };
+  home-manager.extraSpecialArgs = { inherit primaryUser theme; };
   home-manager.users.${primaryUser} = {
     imports = [
       ../common/home

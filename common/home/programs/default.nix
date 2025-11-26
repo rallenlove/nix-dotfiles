@@ -1,4 +1,9 @@
-{ pkgs, ... }:
+{
+  pkgs,
+  # cfg,
+  theme,
+  ...
+}:
 {
   imports = [
     ./starship
@@ -51,7 +56,7 @@
     enableZshIntegration = true;
   };
   programs.ghostty.settings = {
-    theme = "iTerm2 Solarized Dark";
+    theme = "${theme.ghostty}";
     macos-icon = "custom";
     macos-option-as-alt = true;
     maximize = 1;
@@ -66,7 +71,7 @@
     enable = true;
     defaultEditor = true;
     settings = {
-      theme = "solarized_dark";
+      theme = "${theme.helix}";
       editor = {
         trim-trailing-whitespace = true;
         whitespace.render.tab = "all";
