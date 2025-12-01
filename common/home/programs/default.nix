@@ -16,27 +16,10 @@
     enableCompletion = true;
     autosuggestion.enable = true;
     syntaxHighlighting.enable = true;
-    sessionVariables = {
-      # PYTHON_AUTO_VRUN = true;
-      # PYTHON_VENV_NAME = ".venv";
-    };
     shellAliases = {
       d-r = "sudo -H darwin-rebuild switch --flake .";
     };
     plugins = [
-      # {
-      #   name = "python";
-      #   file = "plugins/python/python.plugin.zsh";
-      #   src = pkgs.fetchFromGitHub {
-      #     owner = "ohmyzsh";
-      #     repo = "ohmyzsh";
-      #     rev = "HEAD";
-      #     sha256 = "sha256-gEoNrPt5GZ/fmGZ7QCqNHVsqIXEA0+3WRakyvEJ4cWg=";
-      #     sparseCheckout = [
-      #       "plugins/python"
-      #     ];
-      #   };
-      # }
       {
         name = "zsh-autoswitch-virtualenv";
         file = "autoswitch_virtualenv.plugin.zsh";
@@ -105,23 +88,18 @@
     enable = true;
     settings = {
       git = {
-        paging = {
-          pager = builtins.concatStringsSep " " [
-            "delta"
-            "--dark"
-            "--paging=never"
-            "--line-numbers"
-            "--hyperlinks"
-            ''--hyperlinks-file-link-format="lazygit-edit://{path}:{line}"''
-          ];
-        };
-        # pagers = [
-        #   {
-        #     pager = builtins.concatStringsSep " " [
-        #       ...
-        #     ];
-        #   }
-        # ];
+        pagers = [
+          {
+            pager = builtins.concatStringsSep " " [
+              "delta"
+              "--dark"
+              "--paging=never"
+              "--line-numbers"
+              "--hyperlinks"
+              ''--hyperlinks-file-link-format="lazygit-edit://{path}:{line}"''
+            ];
+          }
+        ];
       };
       gui.nerdFontsVersion = "3";
     };

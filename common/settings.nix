@@ -17,11 +17,19 @@
       dock = {
         expose-group-apps = true;
         mineffect = "scale";
-        mru-spaces = true; # automatically rearrange spaces based on most recent use
+        # mru-spaces = true; # automatically rearrange spaces based on most recent use
         show-recents = false; # disable recent apps
       };
 
-      finder.ShowPathbar = true; # breadcrumb nav at bottom
+      finder = {
+        _FXSortFoldersFirst = true; # when sorting by name
+        _FXSortFoldersFirstOnDesktop = true;
+        # FXEnableExtensionChangeWarning = false;
+        FXPreferredViewStyle = "clmv"; # column view
+        FXRemoveOldTrashItems = true; # after 30 days
+        NewWindowTarget = "Home";
+        ShowPathbar = true; # breadcrumb nav at bottom
+      };
 
       NSGlobalDomain = {
         AppleShowAllExtensions = true; # file extensions
@@ -32,6 +40,12 @@
         NSAutomaticSpellingCorrectionEnabled = false;
         NSWindowShouldDragOnGesture = true; # ctrl + cmd to drag anywhere on window
       };
+
+      # WindowManager = {
+      #   EnableTiledWindowMargins = false;
+      #   EnableTilingByEdgeDrag = true;
+      # };
+      # WindowManager.EnableTiledWindowMargins = false;
     };
 
     keyboard = {
@@ -39,8 +53,6 @@
       remapCapsLockToEscape = true; # remap caps lock to escape
     };
   };
-
-  environment.variables.HOMEBREW_NO_ENV_HINTS = "1"; # Have this in 2 places--does either work?
 
   # Fonts
   fonts = {

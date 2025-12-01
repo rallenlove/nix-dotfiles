@@ -6,6 +6,7 @@ in
   homebrew.casks = [
     "discord"
     "helium-browser"
+    "orion"
     "transmission"
     "ungoogled-chromium"
   ];
