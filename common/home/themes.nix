@@ -3,7 +3,7 @@
     # frappe latte macchiato mocha
     "ghostty" = "Catppuccin Mocha";
     "helix" = "catppuccin_mocha";
-    "starship" = "catppuccin";
+    "starship" = "pure";
     "zellij" = "catppuccin-mocha";
   };
   "solarizedDark" = {
