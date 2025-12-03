@@ -15,6 +15,7 @@
       "colemak-dh"
       "firefox"
       "ghostty"
+      "obsidian"
       "zed"
       "zen"
     ];
