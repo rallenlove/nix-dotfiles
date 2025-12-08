@@ -55,16 +55,26 @@
   };
 
   # Fonts
-  fonts = {
-    packages = with pkgs; [
-      # icon fonts
-      # material-design-icons
-      # font-awesome
+  fonts.packages = with pkgs; [
+    # icon fonts
+    # material-design-icons
+    # font-awesome
 
-      # nerdfonts
-      # https://github.com/NixOS/nixpkgs/blob/nixos-unstable-small/pkgs/data/fonts/nerd-fonts/manifests/fonts.json
-      nerd-fonts.symbols-only # symbols icon only
-      nerd-fonts.fira-code
-    ];
-  };
+    # nerdfonts
+    # https://github.com/NixOS/nixpkgs/blob/nixos-unstable-small/pkgs/data/fonts/nerd-fonts/manifests/fonts.json
+    nerd-fonts.symbols-only # symbols only
+    nerd-fonts.atkynson-mono
+    nerd-fonts.commit-mono
+    nerd-fonts.envy-code-r
+    nerd-fonts.fira-code
+    nerd-fonts.intone-mono
+    nerd-fonts.iosevka
+    nerd-fonts.monoid
+    nerd-fonts.mononoki
+    nerd-fonts.open-dyslexic
+    nerd-fonts.recursive-mono
+    nerd-fonts.sauce-code-pro
+    nerd-fonts.shure-tech-mono
+    nerd-fonts.victor-mono
+  ];
 }
